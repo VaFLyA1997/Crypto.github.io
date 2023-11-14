@@ -41,7 +41,7 @@ p {
 
 
 /* Скрыть полосу прокрутки на мобильных устройствах */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     #image-container {
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -50,4 +50,4 @@ p {
     #image-container::-webkit-scrollbar {
         display: none;
     }
-}
+} */
