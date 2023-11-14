@@ -1,5 +1,9 @@
 body {
     font-family: Arial, sans-serif;
+    max-width: 300px;
+    margin: 0 auto;
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
 }
 
 
@@ -11,6 +15,12 @@ body {
     display: flex;
     overflow-x: scroll;
     white-space: nowrap;
+    scrollbar-width: none; /* скрыть полосу прокрутки в браузерах, поддерживающих новую модель полосы прокрутки */
+    -ms-overflow-style: none; /* скрыть полосу прокрутки в IE и Edge */
+}
+
+#image-container::-webkit-scrollbar {
+    display: none; /* скрыть полосу прокрутки в браузерах WebKit, таких как Chrome и Safari */
 }
 
 img {
