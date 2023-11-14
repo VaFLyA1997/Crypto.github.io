@@ -15,9 +15,10 @@ body {
     display: flex;
     overflow-x: scroll;
     white-space: nowrap;
-    scrollbar-width: none; /* скрыть полосу прокрутки в браузерах, поддерживающих новую модель полосы прокрутки */
-    -ms-overflow-style: none; /* скрыть полосу прокрутки в IE и Edge */
+    scrollbar-width: thin; /* тонкая полоса прокрутки для ПК */
+    -ms-overflow-style: thin; /* тонкая полоса прокрутки для ПК */
 }
+
 
 #image-container::-webkit-scrollbar {
     display: none; /* скрыть полосу прокрутки в браузерах WebKit, таких как Chrome и Safari */
@@ -41,4 +42,17 @@ p {
     color: white;
     font-size: 18px;
     cursor: pointer;
+}
+
+
+/* Скрыть полосу прокрутки на мобильных устройствах */
+@media (max-width: 767px) {
+    #image-container {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #image-container::-webkit-scrollbar {
+        display: none;
+    }
 }
