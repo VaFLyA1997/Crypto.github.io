@@ -19,11 +19,6 @@ body {
     -ms-overflow-style: thin; /* тонкая полоса прокрутки для ПК */
 }
 
-
-#image-container::-webkit-scrollbar {
-    display: none; /* скрыть полосу прокрутки в браузерах WebKit, таких как Chrome и Safari */
-}
-
 img {
     width: 120px;
     height: 120px;
