@@ -10,19 +10,19 @@
     <div id="main">
         <div id="image-container">
             <button id="category1" class="category" onclick="changeButtonColor(1)">
-                <img src="Shop.png" alt="Картинка 1">
+                <img src="Shop.png" alt="Картинка 1" data-original-src="Shop.png">
                 <div id="category-name">Магазин</div>
             </button>
             <button id="category2" class="category" onclick="changeButtonColor(2)">
-                <img src="Repair.png" alt="Картинка 1">
+                <img src="Repair.png" alt="Картинка 1" data-original-src="Repair.png">
                 <div id="category-name">Сервис</div>
             </button>
             <button id="category3" class="category" onclick="changeButtonColor(3)">
-                <img src="Farm.png" style="margin-left: 6px;" alt="Картинка 1">
+                <img src="Farm.png" style="margin-left: 6px;" alt="Картинка 1" data-original-src="Farm.png">
                 <div id="category-name">Ферма</div>
             </button>
-            <button id="category4" class="category" onclick="changeButtonColor(4)">
-                <img src="Heating.png" alt="Картинка 1">
+            <button id="category4" class="category" onclick="changeButtonColor(4)" >
+                <img src="Heating.png" alt="Картинка 1" data-original-src="Heating.png">
                 <div id="category-name">Отопление</div>
             </button>
         </div>
@@ -89,17 +89,13 @@
             var buttons = document.querySelectorAll("button[id^='category']");
             buttons.forEach(function (btn) {
                 btn.classList.remove("active");
+                var img = btn.querySelector("img");
+                img.setAttribute("src", img.dataset.originalSrc);
             });
 
             button.classList.add("active");
-
             var img = button.querySelector("img");
-            var originalSrc = img.getAttribute("src");
-            
-            if (!originalSrc.endsWith("White.png")) {
-                var newSrc = originalSrc.replace(".png", "White.png");
-                img.setAttribute("src", newSrc);
-            }
+            img.setAttribute("src", img.src.replace(".png", "White.png"));
         }
     </script>
 </body>
