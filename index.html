@@ -8,36 +8,79 @@
 </head>
 <body>
     <div id="main">
-        <h1>Крипто</h1>
-        
         <div id="image-container">
-            <img src="S9-650x650.jpg" alt="Картинка 1">
-            <img src="S9-650x650.jpg" alt="Картинка 2">
-            <img src="S9-650x650.jpg" alt="Картинка 2">
-            <img src="S9-650x650.jpg" alt="Картинка 2">
+            <button id="category">
+                <img src="Shop.png" alt="Картинка 1">
+                <div id="category-name">Магазин</div>
+            </button>
+            <button id="category">
+                <img src="Shop.png" alt="Картинка 1">
+                <div id="category-name">Сервис</div>
+            </button>
+            <button id="category">
+                <img src="Shop.png" alt="Картинка 1">
+                <div id="category-name">Ферма</div>
+            </button>
+            <button id="category">
+                <img src="Shop.png" alt="Картинка 1">
+                <div id="category-name">Отопление</div>
+            </button>
         </div>
-        
-        <p>Только сегодня, только сейчас!</p>
-        <button id="buy">Купить</button>
+        <div id="category__availability-name">В наличии</div>
+        <div id="categorys">
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+        </div>
+        <div id="category__availability-name" style="background-color: #c1c93d;">В пути</div>
+        <div id="categorys">
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            <div id="categorys__category">
+                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <div id="category__name" class="category__text">WhatsMiner m21s</div>
+                <div id="category__price" class="category__text">1000 $</div>
+                <botton id="category__button">К товару</button>
+            </div>
+        </div>
     </div>
-    
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        // Получаем текущий цвет фона в Telegram приложении
-        const telegramBackgroundColor = Telegram.Branding.Page.getBackgroundColor();
-        
-        // Получаем элементы, которым нужно изменить цвет текста
-        const mainElement = document.getElementById('main');
-        const buyButton = document.getElementById('buy');
-        
-        // Устанавливаем соответствующий цвет текста в зависимости от цвета фона в Telegram
-        if (telegramBackgroundColor === 'dark') {
-            mainElement.style.color = 'white';
-            buyButton.style.color = 'white';
-        } else {
-            mainElement.style.color = 'black';
-            buyButton.style.color = 'black';
-        }
-    </script>
 </body>
 </html>
