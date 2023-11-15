@@ -9,45 +9,45 @@
 <body>
     <div id="main">
         <div id="image-container">
-            <button id="category">
+            <button id="category1" class="category" onclick="changeButtonColor(1)">
                 <img src="Shop.png" alt="Картинка 1">
                 <div id="category-name">Магазин</div>
             </button>
-            <button id="category">
-                <img src="Shop.png" alt="Картинка 1">
+            <button id="category2" class="category" onclick="changeButtonColor(2)">
+                <img src="Repair.png" alt="Картинка 1">
                 <div id="category-name">Сервис</div>
             </button>
-            <button id="category">
-                <img src="Shop.png" alt="Картинка 1">
+            <button id="category3" class="category" onclick="changeButtonColor(3)">
+                <img src="Farm.png" style="margin-left: 6px;" alt="Картинка 1">
                 <div id="category-name">Ферма</div>
             </button>
-            <button id="category">
-                <img src="Shop.png" alt="Картинка 1">
+            <button id="category4" class="category" onclick="changeButtonColor(4)">
+                <img src="Heating.png" alt="Картинка 1">
                 <div id="category-name">Отопление</div>
             </button>
         </div>
         <div id="category__availability-name">В наличии</div>
         <div id="categorys">
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
             </div>
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
             </div>
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
             </div>
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
@@ -56,25 +56,25 @@
         <div id="category__availability-name" style="background-color: #c1c93d;">В пути</div>
         <div id="categorys">
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
             </div>
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
             </div>
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
             </div>
             <div id="categorys__category">
-                <img id ="category__img" src="Shop.png" alt="Картинка 1">
+                <img id ="category__img" src="S9.png" alt="Картинка 1">
                 <div id="category__name" class="category__text">WhatsMiner m21s</div>
                 <div id="category__price" class="category__text">1000 $</div>
                 <botton id="category__button">К товару</button>
@@ -82,5 +82,25 @@
         </div>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        function changeButtonColor(buttonNumber) {
+            var button = document.getElementById("category" + buttonNumber);
+
+            var buttons = document.querySelectorAll("button[id^='category']");
+            buttons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            var img = button.querySelector("img");
+            var originalSrc = img.getAttribute("src");
+            
+            if (!originalSrc.endsWith("White.png")) {
+                var newSrc = originalSrc.replace(".png", "White.png");
+                img.setAttribute("src", newSrc);
+            }
+        }
+    </script>
 </body>
 </html>
