@@ -1,2 +1,0 @@
-# Crypto.github.io
-Crypto
