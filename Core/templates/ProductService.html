@@ -1,0 +1,146 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA_Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static "./style.css" %}">
+    <title>Shop</title>
+</head>
+<body>
+    <div id="image-container">
+        <a href="/shop/{{ pk }}" id="category1" data-url="/shop/1" class="category">
+            {% if name == "Shop" %}
+            <img src="{% static "./assets/images/ShopWhite.png" %}">
+            <div id="category-name"  style="color: white;">Магазин</div>
+            {% else %}
+            <img src="{% static "./assets/images/Shop.png" %}" alt="Картинка 1">
+            <div id="category-name">Магазин</div>
+            {% endif %}
+        </a>
+        <a href="/service/{{ pk }}" id="category2" class="category" onclick="changeButtonColor(2)">
+            {% if name == "Service" %}
+            <img src="{% static "./assets/images/RepairWhite.png" %}" alt="Картинка 1" data-original-src="Repair.png">
+            <div id="category-name" style="color: white;">Сервис</div>
+            {% else %}
+            <img src="{% static "./assets/images/Repair.png" %}" alt="Картинка 1" data-original-src="Repair.png">
+            <div id="category-name">Сервис</div>
+            {% endif %}
+        </a>
+        <a href="/farm/{{ pk }}" id="category3" class="category" onclick="changeButtonColor(3)">
+            {% if name == "Farm" %}
+            <img src="{% static "./assets/images/FarmWhite.png" %}" style="margin-left: 6px;" alt="Картинка 1" data-original-src="Farm.png">
+            <div id="category-name" style="color: white;">Ферма</div>
+            {% else %}
+            <img src="{% static "./assets/images/Farm.png" %}" style="margin-left: 6px;" alt="Картинка 1" data-original-src="Farm.png">
+            <div id="category-name">Ферма</div>
+            {% endif %}
+        </a>
+        <a href="/heating/{{ pk }}" id="category4" class="category" onclick="changeButtonColor(4)" >
+            {% if name == "Heating" %}
+            <img src="{% static "./assets/images/HeatingWhite.png" %}">
+            <div id="category-name" style="color: white;">Отопление</div>
+            {% else %}
+            <img src="{% static "./assets/images/Heating.png" %}">
+            <div id="category-name">Отопление</div>
+            {% endif %}
+        </a>
+    </div>
+    <div id="main">
+        <div class="product__header">
+            <a href="/service/1" class="product__header-back" >
+                <img src="{% static "./assets/images/back.png" %}">
+            </a>
+            <div class="product__header-name">CRYPTO</div>
+            <a href="/service/1" class="product__header-search" >
+                <img src="{% static "./assets/images/search.png" %}">
+            </a>
+        </div>
+        <div class="product__main">
+            <img class="product-foto" src="{% static "./assets/images/hash-S9.png" %}"></img>  
+            <div class="product-name">HASH ANTMINER S9</div>
+            <div class="product__pricebuy">
+                <div class="product__head--price">
+                    <div class="product-price">1 500 ₽</div>
+                </div>
+                <a href="#" class="product-buy">Заказать</a>
+            </div>
+            <div class="product__menus">
+                <a href="" class="product__menus-menu">Характеристики</a>
+                <a href="" class="product__menus-menu">Отзывы</a>
+                <a href="" class="product__menus-menu">Обзор</a>
+                <a href="" class="product__menus-menu">Инструкции</a>
+            </div>
+            <div class="character-name">Характеристики</div>
+            <div class="product__characteristics">
+                <div class="product__guarantee">
+                    <div class="guarantee-shop">
+                        <div class="quashop">Гарантия сервиса</div>
+                        <div class="quashop">1 мес.</div>
+                    </div>
+                    <!-- <div class="guarantee-shop1">
+                        <div class="quashop">Гарантия Производителя</div>
+                        <div class="quashop">32 мес.</div>
+                    </div> -->
+                    <div class="guarantee-shop1">
+                        <div class="quashop">Модель</div>
+                        <div class="quashop">Antminer S9</div>
+                    </div>
+                    <!-- <div class="guarantee-shop1">
+                        <div class="quashop">Год релиза</div>
+                        <div class="quashop">2015 г.</div>
+                    </div> -->
+                    <div class="guarantee-shop">
+                        <div class="quashop">Количество чипов</div>
+                        <div class="quashop">3 чип.</div>
+                    </div>
+                    <div class="guarantee-shop1">
+                        <div class="quashop">Доп чипы</div>
+                        <div class="quashop">500 ₽</div>
+                    </div>
+                    <!-- <div class="guarantee-shop">
+                        <div class="quashop">Мощность</div>
+                        <div class="quashop">13,5 Th</div>
+                    </div>
+                    <div class="guarantee-shop1">
+                        <div class="quashop">Потребление</div>
+                        <div class="quashop">1200 Вт</div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="order-form__wrapper">
+            <form class="order-form">
+                <a href="#" class="form__back">
+                    <img src="{% static "./assets/images/crossed.png" %}" alt="formBack">
+                </a>
+                <div class="form__text">Ваш ФИО:*</div>
+                <input class="form__input" type="text" id="fullname" placeholder="ФИО" />
+                <div class="form__text">Ваш номер тел.:</div>
+                <input class="form__input" type="text" id="phone" placeholder="Телефон" />
+                <div class="form__text">Комментарий:</div>
+                <textarea class="form__input" id="comment" placeholder="Комментарий"></textarea>
+                <a class="form__button" type="submit">Отправить</a>
+                <div style="font-size: 6px;">Через данную форму вы отправляете свои данные для того, чтоб продавец связался с вами для дальнейшей покупки</div>
+            </form>
+          </div>
+    </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('.product-buy').click(function(e) {
+            e.preventDefault(); // Предотвращаем переход по ссылке
+
+            $('.order-form__wrapper').fadeIn(); // Показываем обертку формы
+        });
+        $('.form__back').click(function(e) {
+            e.preventDefault(); // Предотвращаем переход по ссылке
+
+            $('.order-form__wrapper').fadeOut(); // Скрываем обертку формы
+        });
+        });
+    </script>
+</body>
+
+</html>

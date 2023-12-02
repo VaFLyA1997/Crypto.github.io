@@ -1,0 +1,103 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA_Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static "./style.css" %}">
+    <title>Shop</title>
+</head>
+<body>
+    <div id="image-container">
+        <a href="/shop/{{ pk }}" id="category1" data-url="/shop/1" class="category">
+            {% if name == "Shop" %}
+            <img src="{% static "./assets/images/ShopWhite.png" %}">
+            <div id="category-name"  style="color: white;">Магазин</div>
+            {% else %}
+            <img src="{% static "./assets/images/Shop.png" %}" alt="Картинка 1">
+            <div id="category-name">Магазин</div>
+            {% endif %}
+        </a>
+        <a href="/service/{{ pk }}" id="category2" class="category" onclick="changeButtonColor(2)">
+            {% if name == "Service" %}
+            <img src="{% static "./assets/images/RepairWhite.png" %}" alt="Картинка 1" data-original-src="Repair.png">
+            <div id="category-name" style="color: white;">Сервис</div>
+            {% else %}
+            <img src="{% static "./assets/images/Repair.png" %}" alt="Картинка 1" data-original-src="Repair.png">
+            <div id="category-name">Сервис</div>
+            {% endif %}
+        </a>
+        <a href="/farm/{{ pk }}" id="category3" class="category" onclick="changeButtonColor(3)">
+            {% if name == "Farm" %}
+            <img src="{% static "./assets/images/FarmWhite.png" %}" style="margin-left: 6px;" alt="Картинка 1" data-original-src="Farm.png">
+            <div id="category-name" style="color: white;">Ферма</div>
+            {% else %}
+            <img src="{% static "./assets/images/Farm.png" %}" style="margin-left: 6px;" alt="Картинка 1" data-original-src="Farm.png">
+            <div id="category-name">Ферма</div>
+            {% endif %}
+        </a>
+        <a href="/heating/{{ pk }}" id="category4" class="category" onclick="changeButtonColor(4)" >
+            {% if name == "Heating" %}
+            <img src="{% static "./assets/images/HeatingWhite.png" %}">
+            <div id="category-name" style="color: white;">Отопление</div>
+            {% else %}
+            <img src="{% static "./assets/images/Heating.png" %}">
+            <div id="category-name">Отопление</div>
+            {% endif %}
+        </a>
+    </div>
+    <div id="main">
+        <div class="product__header">
+            <a href="#" class="product__header-back" >
+                <!-- <img src="{% static "./assets/images/back.png" %}"> -->
+            </a>
+            <div class="product__header-name" style="margin-left: 25px;">CRYPTO</div>
+            <a href="/shop/1" class="product__header-search" >
+                <img src="{% static "./assets/images/search.png" %}">
+            </a>
+        </div>
+        {% if asics != None %}
+        <a href="/shop/1" class="category__availability-names">
+            <img style="width: 15px; height: 15px;" src="{% static "./assets/images/down-arrow.png" %}">
+            <div style="text-align: center;">Майнеры</div>
+            <img style="width: 15px; height: 15px;" src="{% static "./assets/images/down-arrow.png" %}">
+        </a>
+        <!-- <div style="text-align: center;">Майнеры</div> -->
+        {% for manufacturer in manufacturers %}
+            <a class="category__availability-names">
+                {{ manufacturer }}
+                <img style="width: 15px; height: 15px;" src="{% static "./assets/images/down-arrowOne.png" %}">
+            </a>
+            <div id="categorys">
+                {% for asic in asics %}
+                    {% if asic.asic.manufacturer == manufacturer %}
+                        <div id="categorys__category">
+                            <img id ="category__img" src="{% static "./assets/images/S9.png" %}" alt="Картинка 1">
+                            <div id="category__name" class="category__text">{{ asic.asic }} 19,5 Th</div>
+                            <div id="category__price" class="category__text">{{ asic.price }} ₽</div>
+                            <a id="category__button" href="/product">К товару</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+        {% endif %}
+<!-- <div id="category__availability-name">В пути</div>
+    <div id="categorys">
+        {% for asic in asics %}
+            {% if asic.asic.manufacturer != "WhatsMiner" %}
+            <div id="categorys__category">
+                <img id ="category__img" src="{% static "./assets/images/S9.png" %}" alt="Картинка 1">
+                <div id="category__name" class="category__text">{{ asic.asic }}</div>
+                <div id="category__name" class="category__text">{{ asic.arrival_date }}</div>
+                <div id="category__price" class="category__text">{{ asic.price }} р.</div>
+                <botton id="category__button">К товару</button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div> -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</body>
+
+</html>
